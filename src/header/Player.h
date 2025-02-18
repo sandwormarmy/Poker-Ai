@@ -19,12 +19,13 @@ class Player {
     public:
     bool isSmallBlind;
     bool isBigBlind;
+
     Player(std::string, unsigned int);
     std::string getName();
     std::vector<Card> getHand();
     unsigned int getBalance();
 
-    bool setBalance(unsigned int);
+    void setBalance(unsigned int);
     void dealHand(std::vector<Card>);
 
 };

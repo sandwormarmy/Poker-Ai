@@ -9,15 +9,14 @@
 
 #include "Card.h"
 #include "Player.h"
-#include "../enums/CardUtils.h"
+#include "../utils/CardUtils.h"
 
 class Poker {
     private:
     std::stack<Card> cardStack;
     std::vector<Player> players;
     unsigned int pot;
-
-
+    void play();
 
     public:
     Poker(std::vector<Player> players);

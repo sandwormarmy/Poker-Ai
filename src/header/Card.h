@@ -5,7 +5,7 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include "../enums/CardUtils.h"
+#include "../utils/CardUtils.h"
 #include <string>
 
 class Card {
