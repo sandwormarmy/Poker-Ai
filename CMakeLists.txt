@@ -29,6 +29,10 @@ qt_add_executable(Poker
         src/GUI/cpp/settingswindow.cpp
         src/GUI/header/settingswindow.h
         src/GUI/ui/settingswindow.ui
+        src/GUI/cpp/PokerSettingsPage.cpp
+        src/GUI/header/PokerSettingsPage.h
+        src/GUI/cpp/pokerwindow.cpp
+        src/GUI/header/pokerwindow.h
 )
 
 # Qt-Bibliotheken verlinken

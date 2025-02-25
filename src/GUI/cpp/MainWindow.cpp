@@ -4,26 +4,36 @@
 
 // You may need to build the project (run Qt uic code generator) to get "ui_mainwindow.h" resolved
 
-#include "../header/MainWindow.h"
-#include "../../../cmake-build-debug\ui_mainwindow.h"
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QLayout>
+
+#include "../header/MainWindow.h"
+#include "../../../cmake-build-debug\ui_mainwindow.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
+    pokerSettingsPage = new PokerSettingsPage(ui, this);
+    ui->stackedWidget->addWidget(pokerSettingsPage);
+
     // Signale und Slots verbinden
+    std::cout << "why4"<<std::endl;
     connect(ui->addPlayerButton, &QPushButton::clicked, this, &MainWindow::addPlayer);
     connect(ui->editPlayerButton, &QPushButton::clicked, this, &MainWindow::editPlayer);
     connect(ui->removePlayerButton, &QPushButton::clicked, this, &MainWindow::removePlayer);
     connect(ui->playPokerButton, &QPushButton::clicked, this, &MainWindow::startPokerGame);
     connect(ui->settingsButton, &QPushButton::clicked, this, &MainWindow::openSettings);
+    std::cout << "kaa"<<std::endl;
+    connect(pokerSettingsPage, &PokerSettingsPage::playersUpdated, this, &MainWindow::updatePlayerList);
+    std::cout << "kaa"<<std::endl;
 }
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete settingsWindow;
 }
 
 void MainWindow::addPlayer() {
@@ -43,7 +53,7 @@ void MainWindow::editPlayer() {
             item->setText(newName);
         }
     } else {
-        QMessageBox::warning(this,"Edit error","Please select a player to edit");
+        QMessageBox::information(this,"Edit error","Please select a player to edit");
     }
 }
 
@@ -52,12 +62,18 @@ void MainWindow::removePlayer() {
     if (item) {
         delete item;
     }else {
-        QMessageBox::warning(this,"Edit error","Please select a player to delete");
+        QMessageBox::information(this,"Edit error","Please select a player to delete");
     }
 }
 
 void MainWindow::startPokerGame() {
-    //TODO
+
+    QStringList items;
+    for (int i = 0; i < ui->playerListWidget->count(); ++i) {
+        items << ui->playerListWidget->item(i)->text();
+    }
+    pokerSettingsPage->setPlayers(items);
+    ui->stackedWidget->setCurrentWidget(ui->PokerSettingsPage);
 }
 
 void MainWindow::openSettings() {
@@ -66,3 +82,7 @@ void MainWindow::openSettings() {
     settingsWindow->show();
 }
 
+void MainWindow::updatePlayerList(const QStringList &players) {
+    ui->playerListWidget->clear();
+    ui->playerListWidget->addItems(players);
+}
