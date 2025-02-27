@@ -7,7 +7,9 @@
 
 #include <QWidget>
 #include <QStringList>
-#include "../../../cmake-build-debug\ui_mainwindow.h"
+
+#include "PokerWindow.h"
+#include "ui_MainWindow.h"
 
 #include "../../header/Player.h"
 
@@ -26,6 +28,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    PokerWindow *pokerWindow;
 
     unsigned int balance = 0;
     unsigned int bigBlind = 0;
@@ -46,8 +49,6 @@ private slots:
 
  signals:
         void playersUpdated(const QStringList &players);
-
-
 
 };
 

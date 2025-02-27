@@ -5,7 +5,7 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_SettingsWindow.h" resolved
 
 #include "../header/settingswindow.h"
-#include "ui_SettingsWindow.h"
+#include "ui_settingswindow.h"
 
 
 SettingsWindow::SettingsWindow(QWidget *parent) :

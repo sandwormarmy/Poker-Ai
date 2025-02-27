@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>pokerWindow</class>
+    <widget class="QWidget" name="PokerWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>800</width>
+                <height>600</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Poker Game</string>
+        </property>
+
+        <widget class="QWidget" name="centralWidget">
+            <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                    <layout class="QGridLayout" name="playerGrid">
+                        <item row="0" column="0">
+                            <widget class="QLabel" name="player1Name">
+                                <property name="text">
+                                    <string>Spieler 1</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="0" column="1">
+                            <widget class="QLabel" name="player1Chips">
+                                <property name="text">
+                                    <string>Chips: 1000</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="0" column="2">
+                            <widget class="QLabel" name="player1Cards">
+                                <property name="text">
+                                    <string>[?] [?]</string>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item row="1" column="0">
+                            <widget class="QLabel" name="player2Name">
+                                <property name="text">
+                                    <string>Spieler 2</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="1" column="1">
+                            <widget class="QLabel" name="player2Chips">
+                                <property name="text">
+                                    <string>Chips: 1000</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="1" column="2">
+                            <widget class="QLabel" name="player2Cards">
+                                <property name="text">
+                                    <string>[?] [?]</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </item>
+
+                <item>
+                    <layout class="QHBoxLayout" name="boardLayout">
+                        <item>
+                            <widget class="QLabel" name="flopCard1">
+                                <property name="text">
+                                    <string>[?]</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="flopCard2">
+                                <property name="text">
+                                    <string>[?]</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="flopCard3">
+                                <property name="text">
+                                    <string>[?]</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="turnCard">
+                                <property name="text">
+                                    <string>[?]</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="riverCard">
+                                <property name="text">
+                                    <string>[?]</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </item>
+
+                <item>
+                    <widget class="QLabel" name="potLabel">
+                        <property name="text">
+                            <string>Pot: 0 Chips</string>
+                        </property>
+                    </widget>
+                </item>
+
+                <item>
+                    <widget class="QLabel" name="logLabel">
+                        <property name="text">
+                            <string>Spiel gestartet...</string>
+                        </property>
+                    </widget>
+                </item>
+
+                <item>
+                    <layout class="QHBoxLayout" name="buttonLayout">
+                        <item>
+                            <widget class="QPushButton" name="checkButton">
+                                <property name="text">
+                                    <string>Check</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QPushButton" name="callButton">
+                                <property name="text">
+                                    <string>Call</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QPushButton" name="raiseButton">
+                                <property name="text">
+                                    <string>Raise</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QPushButton" name="foldButton">
+                                <property name="text">
+                                    <string>Fold</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </item>
+            </layout>
+        </widget>
+    </widget>
+    <resources/>
+    <connections/>
+</ui>

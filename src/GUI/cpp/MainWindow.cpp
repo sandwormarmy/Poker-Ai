@@ -9,7 +9,7 @@
 #include <QLayout>
 
 #include "../header/MainWindow.h"
-#include "../../../cmake-build-debug\ui_mainwindow.h"
+#include "ui_MainWindow.h"
 
 
 MainWindow::MainWindow(QWidget *parent)

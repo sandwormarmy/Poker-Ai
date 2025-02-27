@@ -34,12 +34,16 @@ void PokerSettingsPage::removeAIPlayer() {
 
 void PokerSettingsPage::PlayPoker() {
     // dosnt show errrors ??
-    std::cout << "hier"<<std::endl;
+
     auto wow = pregameCheck();
     if (wow) {
+        std::cout << "hier"<<std::endl;
         //pokerPage = new PokerPage(ui, this);
         //ui->stackedWidget->addWidget(PokerPage);
-        ui->stackedWidget->setCurrentWidget(ui->PokerPage);
+        pokerWindow = new PokerWindow();
+        //pokerWindow->setAttribute(Qt::WA_DeleteOnClose);
+        pokerWindow->show();
+        std::cout << "warum"<<std::endl;
     }
 }
 
